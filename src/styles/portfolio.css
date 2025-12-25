@@ -1,0 +1,290 @@
+.portfolio{ padding-top: 8px; }
+
+/* Title Row */
+.pTopRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom: 12px;
+}
+
+.pTitle{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.pTitleBar{
+  width:4px;
+  height:26px;
+  background:#111;
+  border-radius:999px;
+}
+
+.pTitle h2{
+  margin:0;
+  font-size:18px;
+  font-weight:900;
+}
+
+.pViewAll{
+  border:1px solid #e6e6e6;
+  background:#fff;
+  color:#111;
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  white-space: nowrap;
+}
+
+.pViewAllIcon{
+  display:inline-flex;
+  width:22px;
+  height:22px;
+  border-radius:10px;
+  background:#f3f3f3;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Masonry wrapper */
+.masonryWrap{ margin-top: 8px; }
+
+/* Clickable Card */
+.pCard{ width:100%; }
+.pClickable{
+  width:100%;
+  border:0;
+  padding:0;
+  background:transparent;
+  text-align:right;
+  cursor:pointer noted;
+  cursor:pointer;
+}
+
+.pMedia{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  background:#e6e6e6;
+}
+
+.pImg{
+  width:100%;
+  height:auto;
+  display:block;
+  transition: filter .25s ease, transform .25s ease;
+  transform: scale(1);
+  user-select:none;
+  -webkit-user-drag:none;
+}
+
+.pClickable:hover .pImg{ transform: scale(1.01); }
+
+.pLabelWrap{
+  position:absolute;
+  bottom: 10px;
+  right: 10px;
+  pointer-events:none;
+}
+
+.pLabel{
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  color:#fff;
+  font-weight:900;
+  font-size:13px;
+  text-shadow: 0 6px 14px rgba(0,0,0,.45);
+}
+
+/* Load More */
+.loadMoreWrap{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top: 14px;
+}
+
+.loadMoreBtn{
+  border:1px solid #e6e6e6;
+  background:#fff;
+  color:#111;
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:13px;
+  white-space: nowrap;
+}
+
+.loadMoreBtn:hover{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+.loadMoreBtn.secondary{
+  background:#f5f5f5;
+}
+
+/* Categories Row (bottom) */
+.pCatsRow{
+  margin-top: 14px;
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding: 8px 2px 2px;
+  scrollbar-width: thin;
+}
+
+.pChip{
+  border:1px solid #e6e6e6;
+  background:#fff;
+  color:#111;
+  padding:10px 14px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:13px;
+  white-space: nowrap;
+}
+
+.pChipActive{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+@media (max-width: 700px){
+  .pTopRow{ flex-direction: column; align-items: stretch; }
+  .pViewAll{ justify-content: center; }
+}
+
+.coBlock{
+  margin-top: 12px;
+}
+
+.coTitle{
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.coRow{
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+}
+
+.coLogoCard{
+  border: 1px solid var(--border);
+  background:#fff;
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.04);
+}
+
+.coLogo{
+  height: 22px;
+  width: auto;
+  display:block;
+  filter: grayscale(1);
+  opacity: .9;
+}
+
+.coLogoCard:hover .coLogo{
+  filter: grayscale(0);
+  opacity: 1;
+}
+/* ===== Current Companies (minimal) ===== */
+.coSection{
+  margin-top: 14px;
+}
+
+.coHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom: 8px;
+}
+
+.coKicker{
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+.coList{
+  display: grid;
+  gap: 10px;
+}
+
+.coItem{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.04);
+  transition: border-color .15s ease, transform .15s ease;
+}
+
+.coItem:hover{
+  border-color: #dcdcdc;
+  transform: translateY(-1px);
+}
+
+.coLogoBox{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  display:grid;
+  place-items:center;
+  background: #fafafa;
+  flex: 0 0 auto;
+}
+
+.coLogo{
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display:block;
+  filter: grayscale(1);
+  opacity: .85;
+  transition: filter .2s ease, opacity .2s ease;
+}
+
+.coItem:hover .coLogo{
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.coMeta{
+  display:grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.coName{
+  font-weight: 900;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.coRole{
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
