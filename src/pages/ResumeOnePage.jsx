@@ -5,8 +5,7 @@ import PortfolioSection from "../components/PortfolioSection";
 import { useMemo, useState } from "react";
 import ImageLightbox from "../components/ImageLightbox";
 import CompanyLogos from "../components/CompanyLogos";
-import c1 from "../assets/companies/company-1.JFIF";
-import c2 from "../assets/companies/company-2.JFIF";
+import c1 from "../assets/companies/company-1.JPG";
 import ResumeDownloads from "../components/ResumeDownloads";
 
 function Chip({ children, href }) {
@@ -150,7 +149,7 @@ export default function ResumeOnePage() {
             <CompanyLogos
               items={[
                 { name: "نگارخانه الماس", role: "مدیریت نگارخانه/ مسئول فنی/ عکاس", logo: c1 },
-                { name: "هولدینگ اشکان", role: "مسئول فنی/ عکاس", logo: c2 },
+                // { name: "هولدینگ اشکان", role: "مسئول فنی/ عکاس", logo: c2 },
               ]}
             />
 
