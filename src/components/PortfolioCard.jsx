@@ -26,9 +26,9 @@ export default function PortfolioCard({ item, onOpen }) {
             onMouseEnter={() => imgRef.current && (imgRef.current.style.filter = "grayscale(0)")}
             onMouseLeave={() => imgRef.current && (imgRef.current.style.filter = "grayscale(1)")}
           />
-          <div className="pLabelWrap">
+          {/* <div className="pLabelWrap">
             <div className="pLabel">{item.label}</div>
-          </div>
+          </div> */}
         </div>
       </button>
     </article>

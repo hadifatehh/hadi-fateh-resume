@@ -145,38 +145,10 @@ function IconMail() {
 export default function ResumeOnePage() {
   return (
     <main className="pageWrap" dir="rtl">
-      {/* HERO */}
-      {/* <header className="hero">
-        <div className="heroTop">
-          <div>
-            <h1 className="name">{resume.name}</h1>
-            <p className="subtitle">{resume.summary}</p>
-          </div>
-          <CompanyLinks companies={resume.companies} />
-          <div className="heroMeta">
-            <div className="chipsRow">
-              <Chip>{resume.contact.location}</Chip>
-              <Chip href={`tel:${resume.contact.phone}`}>
-                {resume.contact.phone}
-              </Chip>
-              <Chip href={`mailto:${resume.contact.email}`}>
-                <IconMail /> {resume.contact.email}
-              </Chip>
-            </div>
-            <div style={{ marginTop: "10px" }}>
-              <ResumeDownloads
-                faHref="/resume-fa.pdf"
-                enHref="/resume-en.pdf"
-              />
-            </div>{" "}
-          </div>
-        </div>
-
-        
-      </header> */}
-
       <header className="hero" style={{ marginBottom: "30px" }}>
-        {/* استفاده از گرید برای چیدمان دو ستونه (متن راست، باکس تماس چپ) */}
+        {/* <div className="heroAvatar">
+          <img src={avatar} alt="هادی فاتح" />
+        </div> */}
         <div
           className="heroTop"
           style={{
@@ -186,7 +158,6 @@ export default function ResumeOnePage() {
             alignItems: "start",
           }}
         >
-          {/* ستون راست: معرفی و شرکت‌ها */}
           <div
             style={{ display: "flex", flexDirection: "column", gap: "16px" }}
           >
@@ -216,30 +187,26 @@ export default function ResumeOnePage() {
               </p>
             </div>
 
-            {/* لینک‌های شرکت (طراحی ساده و روشن) */}
             <div>
               <CompanyLinks companies={resume.companies} />
             </div>
           </div>
 
-          {/* ستون چپ: باکس اطلاعات تماس (نسخه روشن) */}
           <div
             style={{
               background: "#fff",
               border: "1px solid #eee",
               borderRadius: "18px",
               padding: "20px",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.04)", // سایه خیلی نرم و روشن
+              boxShadow: "0 8px 24px rgba(0,0,0,0.04)", 
               display: "flex",
               flexDirection: "column",
               gap: "16px",
             }}
           >
-            {/* آیتم‌های تماس */}
             <div
               style={{ display: "flex", flexDirection: "column", gap: "14px" }}
             >
-              {/* موبایل */}
               <a
                 href={`tel:${resume.contact.phone}`}
                 style={{
@@ -291,7 +258,6 @@ export default function ResumeOnePage() {
                 </div>
               </a>
 
-              {/* ایمیل */}
               <a
                 href={`mailto:${resume.contact.email}`}
                 style={{
@@ -341,7 +307,6 @@ export default function ResumeOnePage() {
                 </div>
               </a>
 
-              {/* آدرس */}
               <div
                 style={{
                   display: "flex",
