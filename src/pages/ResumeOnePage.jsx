@@ -2,6 +2,9 @@ import "../styles/resume-min.css";
 import { resume } from "../data/resume";
 import PortfolioSection from "../components/PortfolioSection";
 import ResumeDownloads from "../components/ResumeDownloads";
+import avatar from "../assets/profile.jpg";
+import { useState } from "react";
+import ImageLightbox from "../components/ImageLightbox";
 
 function Chip({ children, href }) {
   if (href) {
@@ -143,12 +146,26 @@ function IconMail() {
 }
 
 export default function ResumeOnePage() {
+  const [avatarLb, setAvatarLb] = useState(false);
+
   return (
     <main className="pageWrap" dir="rtl">
       <header className="hero" style={{ marginBottom: "30px" }}>
         {/* <div className="heroAvatar">
           <img src={avatar} alt="هادی فاتح" />
         </div> */}
+
+        <div
+          className="heroAvatar"
+          role="button"
+          tabIndex={0}
+          onClick={() => setAvatarLb(true)}
+          onKeyDown={(e) => (e.key === "Enter" ? setAvatarLb(true) : null)}
+          title="مشاهده عکس"
+        >
+          <img src={avatar} alt="هادی فاتح" draggable={false} />
+        </div>
+
         <div
           className="heroTop"
           style={{
@@ -198,7 +215,7 @@ export default function ResumeOnePage() {
               border: "1px solid #eee",
               borderRadius: "18px",
               padding: "20px",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.04)", 
+              boxShadow: "0 8px 24px rgba(0,0,0,0.04)",
               display: "flex",
               flexDirection: "column",
               gap: "16px",
@@ -476,6 +493,12 @@ export default function ResumeOnePage() {
               ))}
             </ul>
           </Section>
+          <ImageLightbox
+            open={avatarLb}
+            src={avatar}
+            title="هادی فاتح"
+            onClose={() => setAvatarLb(false)}
+          />
         </aside>
       </section>
     </main>
