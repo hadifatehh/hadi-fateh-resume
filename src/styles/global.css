@@ -8,25 +8,55 @@
   --radius: 18px;
 }
 
-*{ box-sizing: border-box; }
-html, body { height: 100%; }
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+html{
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body{ height: 100%; }
+
 body{
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* مهم: بچه‌های flex/grid روی موبایل به جای overflow، جمع بشن */
+*{ min-width: 0; }
+
+img, video, canvas, svg{
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .page{
   min-height: 100vh;
+  width: 100%;
 }
 
+/* این کانتینر باید تنها جایی باشه که padding و max-width می‌ده */
 .container{
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 28px 20px 80px;
+  padding: 28px 16px 80px;
 }
 
+@media (max-width: 480px){
+  .container{
+    padding: 16px 12px 64px;
+  }
+}
+
+/* دکمه‌ها فقط فونت inherit؛ بقیه رو هر کامپوننت خودش کنترل کنه */
 button{
   font-family: inherit;
 }

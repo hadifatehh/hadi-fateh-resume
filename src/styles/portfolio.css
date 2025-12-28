@@ -56,13 +56,13 @@
 
 /* Clickable Card */
 .pCard{ width:100%; }
+
 .pClickable{
   width:100%;
   border:0;
   padding:0;
   background:transparent;
   text-align:right;
-  cursor:pointer noted;
   cursor:pointer;
 }
 
@@ -131,7 +131,7 @@
   background:#f5f5f5;
 }
 
-/* Categories Row (bottom) */
+/* Categories Row */
 .pCatsRow{
   margin-top: 14px;
   display:flex;
@@ -139,6 +139,9 @@
   overflow-x:auto;
   padding: 8px 2px 2px;
   scrollbar-width: thin;
+
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 
 .pChip{
@@ -150,6 +153,7 @@
   cursor:pointer;
   font-size:13px;
   white-space: nowrap;
+  scroll-snap-align: start;
 }
 
 .pChipActive{
@@ -163,47 +167,31 @@
   .pViewAll{ justify-content: center; }
 }
 
-.coBlock{
-  margin-top: 12px;
+@media (max-width: 480px){
+  .pChip{
+    padding: 9px 12px;
+    font-size: 12px;
+    border-radius: 12px;
+  }
+
+  .loadMoreWrap{
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 4px;
+  }
+
+  .loadMoreBtn{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pLabel{
+    font-size: 12px;
+  }
 }
 
-.coTitle{
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 8px;
-  font-weight: 900;
-}
-
-.coRow{
-  display:flex;
-  gap:10px;
-  flex-wrap: wrap;
-}
-
-.coLogoCard{
-  border: 1px solid var(--border);
-  background:#fff;
-  border-radius: 14px;
-  padding: 10px 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.04);
-}
-
-.coLogo{
-  height: 22px;
-  width: auto;
-  display:block;
-  filter: grayscale(1);
-  opacity: .9;
-}
-
-.coLogoCard:hover .coLogo{
-  filter: grayscale(0);
-  opacity: 1;
-}
 /* ===== Current Companies (minimal) ===== */
-.coSection{
-  margin-top: 14px;
-}
+.coSection{ margin-top: 14px; }
 
 .coHead{
   display:flex;
@@ -288,3 +276,33 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* موبایل hover نداره؛ پس تصاویر رو رنگی نشون بده */
+@media (hover: none){
+  .pImg, .coLogo{
+    filter: grayscale(0) !important;
+    opacity: 1 !important;
+  }
+}
+
+
+/* Chips: وقتی جا نیست، دو ردیف بشه */
+@media (max-width: 520px){
+  .pCatsRow{
+    overflow-x: visible;          /* اسکرول افقی خاموش */
+    scroll-snap-type: none;       /* اسنپ خاموش */
+    flex-wrap: wrap;              /* دو/چند ردیف */
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 8px 0 2px;
+  }
+
+  .pChip{
+    white-space: nowrap;          /* متن نشکنه */
+    /*flex: 1 1 calc(50% - 8px);    /* دو ستون => دو ردیف */
+    flex: 1 1 calc(33.333% - 8px);
+    text-align: center;
+    padding: 10px 12px;
+  }
+}
+

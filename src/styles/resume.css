@@ -1,7 +1,8 @@
+/* resume.css (ResumePage) */
+
 .resumePage{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 28px 20px 90px;
+  width: 100%;
+  padding: 0; /* padding رو container می‌ده */
 }
 
 .resumeHero{
@@ -26,6 +27,7 @@
   color: #555;
   font-size: 14px;
   line-height: 1.8;
+  overflow-wrap: anywhere; /* ایمیل و لینک‌ها نترکن */
 }
 
 .resumeContact a{
@@ -114,6 +116,7 @@
   justify-content: space-between;
   gap: 10px;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .timelineHead h3{
@@ -128,5 +131,21 @@
 @media (max-width: 900px){
   .resumeGrid{
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px){
+  .resumeName{
+    font-size: 28px;
+  }
+
+  .resumeCard{
+    padding: 12px;
+  }
+
+  .timelineHead{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 }
